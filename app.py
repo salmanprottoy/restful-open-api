@@ -3,6 +3,7 @@ import jwt
 import datetime
 from functools import wraps
 from flask_swagger_ui import get_swaggerui_blueprint
+
 # from routes import request_api
 app = Flask(__name__)
 
@@ -13,7 +14,7 @@ SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
     SWAGGER_URL,
     API_URL,
     config={
-        'app_name': "Seans-Python-Flask-REST-Boilerplate"
+        'app_name': "Flask Restful OpenAPI"
     }
 )
 app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
@@ -21,7 +22,6 @@ app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
 
 
 # app.register_blueprint(request_api.get_blueprint())
-
 
 
 app.config['SECRET_KEY'] = 'mysecretkey'
@@ -37,7 +37,7 @@ def token_required(f):
             return jsonify({'message': 'Token is missing'}), 403
 
         try:
-            data = jwt.decode(token, app.config['SECRET_KEY'],algorithms=['HS256'])
+            data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
         except:
             return jsonify({'message': 'Token is invalid!'}), 403
 
@@ -70,6 +70,7 @@ def login():
         return jsonify({'token': token})
 
     return make_response('Could not verify!', 401, {'WWW-Authenticate': 'Basic realm:"Login Required"'})
+
 
 # @app.route('/static/<path:path>')
 # def send_static(path):

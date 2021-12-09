@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "description": "sean",
+    "description": "",
     "version": "1.0.0",
-    "title": "Resful Api using S",
+    "title": "Flask Restful OpenAPI",
     "license": {
       "name": "MIT",
       "url": "https://opensource.org/licenses/MIT"
@@ -16,8 +16,8 @@
   ],
   "tags": [
     {
-      "name": "Book Request",
-      "description": "Example API for requesting and return book requests"
+      "name": "Flask Restful OpenAPI",
+      "description": "Example Restful OpenAPI"
     }
   ],
   "paths": {
