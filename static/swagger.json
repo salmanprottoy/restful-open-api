@@ -11,7 +11,7 @@
   },
   "tags": [
     {
-      "name": "Example of restful open api",
+      "name": "Example of Restful OpenAPI",
       "description": ""
     }
   ],
@@ -62,8 +62,8 @@
         }
       ],
       "get": {
-        "tags": ["House request"],
-        "summary": "Enter Name",
+        "tags": ["Family Friendly Rentals"],
+        "summary": "",
         "parameters": [
           {
             "name": "title",
@@ -145,35 +145,35 @@
       },
       "bedroom": {
         "properties": {
-          "bed": {
+          "bedroom": {
             "type": "string"
           }
         }
       },
       "sleeps": {
         "properties": {
-          "sleep": {
+          "sleeps": {
             "type": "string"
           }
         }
       },
       "bathroom": {
         "properties": {
-          "bath": {
+          "bathroom": {
             "type": "string"
           }
         }
       },
       "price": {
         "properties": {
-          "money": {
+          "price": {
             "type": "string"
           }
         }
       },
       "location": {
         "properties": {
-          "loc": {
+          "location": {
             "type": "string"
           }
         }

@@ -22,7 +22,8 @@ def token_required(f):
             return jsonify({'message': 'Token is missing'}), 403
 
         try:
-            data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+            data = jwt.decode(
+                token, app.config['SECRET_KEY'], algorithms=['HS256'])
         except:
             return jsonify({'message': 'Token is invalid!'}), 403
 
@@ -92,7 +93,6 @@ def house():
         else:
             sql = sql + "AND Price LIKE " + f"'$%{price}%'"
 
-
     query = sql
     print(query)
     cursor.execute(query)
@@ -155,4 +155,4 @@ def login():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
